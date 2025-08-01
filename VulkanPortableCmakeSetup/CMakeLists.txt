@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.31)
-project(ProjectName)
+project(ProjectName) # Replace With your Project Name
 
 # Set C++ standard
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 20) # Targeting Cpp 20 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Ensure MinGW Makefiles for MSYS2
@@ -33,14 +33,13 @@ file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS
 )
 
 # Define executable
-add_executable(ProjectName ${SOURCE_FILES}
-)
+add_executable(ProjectName ${SOURCE_FILES})
 
 # Link libraries and include directories
 target_link_libraries(ProjectName PRIVATE glfw Vulkan::Vulkan)
 target_include_directories(ProjectName PRIVATE ${Vulkan_INCLUDE_DIRS})
 
-# Optional: Ensure Vulkan SDK is found
+# optional: Ensuring Vulkan SDK is available on the system
 if (NOT Vulkan_FOUND)
-    message(FATAL_ERROR "Vulkan SDK not found. Please install it from https://www.lunarg.com/vulkan-sdk/")
+    message(FATAL_ERROR "Vulkan SDK not found. Please install it from: https://www.lunarg.com/vulkan-sdk/")
 endif()
