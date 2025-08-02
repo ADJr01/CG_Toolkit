@@ -5,3 +5,5 @@ A cross-platform CMake boilerplate for Vulkan development with GLFW.
 ✅ Works on Windows and Linux  
 ✅ Easy to integrate into new projects  
 ✅ Clean, minimal, and tested
+
+**Please Make sure every files are under `src/` folder**
